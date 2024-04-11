@@ -3,19 +3,19 @@ const dataCreateBtn = document.querySelector('button[data-create]');
 const dataDestroyBtn = document.querySelector('button[data-destroy]');
 const divBoxes = document.querySelector('#boxes');
 
-dataCreateBtn.addEventListener('click', OnCreateClick);
-dataDestroyBtn.addEventListener('click', OnDestroyClick);
+dataCreateBtn.addEventListener('click', OnCreateBoxes);
+dataDestroyBtn.addEventListener('click', OnDestroyBoxes);
 
-function OnCreateClick() {
+function OnCreateBoxes() {
   let amount = input.value;
   if (amount < 1 || amount > 100) {
     return alert('Please enter the correct amount between 1 and 100');
   }
-  OnDestroyClick();
+  OnDestroyBoxes();
   createBoxes(amount);
 }
 
-function OnDestroyClick() {
+function OnDestroyBoxes() {
   divBoxes.innerHTML = '';
   input.value = '';
 }
