@@ -22,14 +22,20 @@ function OnDestroyBoxes() {
 
 function createBoxes(amount) {
   let size = 30;
+  const fragmentDiv = document.createDocumentFragment();
+
   for (let i = 0; i < amount; i++) {
     let box = document.createElement('div');
+
     box.style.backgroundColor = getRandomHexColor();
     box.style.width = `${size}px`;
     box.style.height = `${size}px`;
-    divBoxes.append(box);
+
+    fragmentDiv.appendChild(box);
     size += 10;
   }
+
+  divBoxes.appendChild(fragmentDiv);
 }
 
 function getRandomHexColor() {
